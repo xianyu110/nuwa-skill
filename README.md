@@ -18,7 +18,7 @@
 那何必蒸馏同事？去蒸馏乔布斯、芒格、费曼、马斯克。<br>
 只需输入一个名字，女娲自动完成调研、提炼、验证全流程。
 
-[看效果](#效果示例) · [安装](#安装) · [它蒸馏了什么](#女娲蒸馏了什么) · [工作原理](#工作原理)
+[看效果](#效果示例) · [安装](#安装) · [它蒸馏了什么](#女娲蒸馏了什么) · [炼书](#女娲炼书) · [工作原理](#工作原理)
 
 <br>
 
@@ -181,6 +181,43 @@ npx skills add alchaincyf/nuwa-skill
 
 ---
 
+## 女娲炼书
+
+女娲不仅能蒸馏人，还能**炼书**。
+
+输入一个技术/概念主题（如「RAG技术」「Agent框架」「Web3」），女娲自动完成：深度调研 → 结构化整理 → 生成 Markdown 书籍 + PDF。
+
+```
+> 炼书 RAG技术
+> 调研一下 Agent 框架
+> 写一本关于向量数据库的书
+> 帮我研究一下大模型微调
+```
+
+### 炼书流程
+
+| 阶段 | 做什么 |
+|------|--------|
+| 需求澄清 | 确认主题边界、目标读者、深度（概览/标准/专著） |
+| 六路并行调研 | 6个Agent同时研究：基础概念、技术架构、生态工具、应用案例、挑战局限、未来趋势 |
+| 书籍结构设计 | 根据调研结果自动生成大纲（基础篇→原理篇→实践篇→展望篇） |
+| 内容撰写 | 逐章撰写，含代码示例、架构图、对比表格、来源引用 |
+| 质量验证 | 检查结构完整性、来源引用、术语一致性、时效性 |
+| 输出 | 生成 Markdown + PDF（pandoc + xelatex，支持中文） |
+
+### 炼书 vs ���馏
+
+| 维度 | 蒸馏（造人） | 炼书 |
+|------|------------|------|
+| 输入 | 一个人名 | 一个技术/概念主题 |
+| 产出 | 人物视角Skill（SKILL.md） | 结构化书籍（Markdown + PDF） |
+| 核心方法 | 提取心智模型和表达DNA | 组织知识结构和实践指南 |
+| 质量标准 | 三重验证心智模型 | 来源引用 + 术语一致性 + 时效性 |
+
+炼书是独立Skill，位于 `nuwa-book-forge/` 目录，有自己的SKILL.md、模板和脚本。
+
+---
+
 ## 工作原理
 
 输入一个名字后，女娲做四件事：
@@ -201,7 +238,14 @@ npx skills add alchaincyf/nuwa-skill
 
 ```
 nuwa-skill/
-├── SKILL.md                      # 女娲本体
+├── SKILL.md                      # 女娲本体（蒸馏人物）
+├── nuwa-book-forge/              # 女娲炼书（调研技术/概念→生成书籍）
+│   ├── SKILL.md                  # 炼书Skill本体
+│   ├── references/
+│   │   └── book-template.md      # 书籍Markdown模板
+│   └── scripts/
+│       ├── merge_research.py     # 调研摘要生成
+│       └── build_pdf.sh          # Markdown→PDF转换
 ├── references/
 │   ├── extraction-framework.md   # 提炼方法论（想深入了解看这个）
 │   └── skill-template.md         # 生成Skill的模板
@@ -215,7 +259,7 @@ nuwa-skill/
     ├── mrbeast-perspective/           # MrBeast
     ├── elon-musk-perspective/         # 马斯克
     ├── munger-perspective/            # 查理·芒格
-    ├── feynman-perspective/           # 费曼
+    ├��─ feynman-perspective/           # 费曼
     ├── naval-perspective/             # Naval Ravikant
     ├── taleb-perspective/             # 塔勒布
     ├── zhangxuefeng-perspective/      # 张雪峰
@@ -298,6 +342,8 @@ Not role-playing. Cognitive architecture extraction.
 **Install**: `npx skills add alchaincyf/nuwa-skill`
 
 **How it works**: Input a name → 6 parallel research agents → 40+ primary sources → triple-verified mental models → quality-validated SKILL.md
+
+**Nuwa Book Forge**: Input a tech topic → parallel research → structured Markdown book + PDF export. See `nuwa-book-forge/`.
 
 **13 person skills + 1 topic skill included** — all with full research data. The Jobs example includes a complete multi-turn conversation demo.
 
