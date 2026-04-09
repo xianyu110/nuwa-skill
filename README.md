@@ -1,7 +1,6 @@
 <div align="center">
 
 
-        ### Hi there, I'm Maynor 👋
 
 <p align="center">
 <p align="left">
@@ -33,6 +32,9 @@
 </p>
 
 </p>
+# Hi there, I'm Maynor 👋
+
+
 # 女娲.skill
 
 > *「你想蒸馏的下一个员工，何必是同事」*
