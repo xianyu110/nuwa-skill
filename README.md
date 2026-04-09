@@ -1,5 +1,33 @@
 <div align="center">
+<p align="center">
+<p align="left">
+    <!-- CSDN Badge -->
+    <a href="https://blog.csdn.net/xianyu120">
+        <img src="https://img.shields.io/badge/CSDN-博客-c32136?style=for-the-badge&logo=csdn" alt="CSDN" />
+    </a>
+    <!-- Bilibili Badge -->
+    <a href="https://space.bilibili.com/399102586">
+        <img src="https://img.shields.io/badge/Bilibili-B站-fb7299?style=for-the-badge&logo=bilibili" alt="Bilibili" />
+    </a>
+    <!-- WeChat Official Account Badge -->
+    <a href="https://upload.maynor1024.live/file/1773461955906_qrcode_for_gh_c749803541de_1280.jpg" target="_blank">
+        <img src="https://img.shields.io/badge/微信公众号-MaynorAI-07C160?style=for-the-badge&logo=wechat" alt="微信公众号" />
+    </a>
+    <!-- YouTube Badge -->
+    <a href="https://www.youtube.com/@buguniao537">
+        <img src="https://img.shields.io/badge/YouTube-Profile-red?style=for-the-badge&logo=youtube" alt="Youtube" />
+    </a>
+    <!-- QQ Badge -->
+    <a href="https://qm.qq.com/q/Q4YTVK5T6q">
+        <img src="https://img.shields.io/badge/QQ-1002569303-0099ff?style=for-the-badge&logo=tencentqq" alt="QQ" />
+    </a>
+    <!-- X (Twitter) Badge -->
+    <a href="https://x.com/42782anna">
+        <img src="https://img.shields.io/badge/X-Profile-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
+    </a>
+</p>
 
+</p>
 # 女娲.skill
 
 > *「你想蒸馏的下一个员工，何必是同事」*
