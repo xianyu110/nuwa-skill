@@ -25,7 +25,7 @@ AGENTS = {
 }
 
 
-def count_sources(content: str) -> dict:
+def count_sources(content: str) -> "dict":
     """统计来源数量和一手/二手占比"""
     urls = re.findall(r'https?://[^\s\)\]>]+', content)
 
@@ -46,7 +46,7 @@ def count_sources(content: str) -> dict:
     }
 
 
-def extract_key_findings(content: str, max_items: int = 3) -> list[str]:
+def extract_key_findings(content: str, max_items: int = 3) -> "list[str]":
     """提取关键发现（取前几个二级标题或加粗项）"""
     headings = re.findall(r'^##\s+(.+)$', content, re.MULTILINE)
     if headings:
@@ -60,7 +60,7 @@ def extract_key_findings(content: str, max_items: int = 3) -> list[str]:
     return [l[:50] + '...' if len(l) > 50 else l for l in lines[:max_items]]
 
 
-def find_debates(files: dict[str, str]) -> list[str]:
+def find_debates(files: "dict[str, str]") -> "list[str]":
     """检测跨文件争议点"""
     debates = []
     for name, content in files.items():
